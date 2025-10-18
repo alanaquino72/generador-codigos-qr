@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generador de Códigos QR</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Tipografía elegante -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <!-- Íconos Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <!-- Biblioteca QRCode.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+<body>
+  <!-- Encabezado -->
+  <header>
+    <div class="logo">Generador de Códigos QR</div>
+    <!-- Botón Dark Mode -->
+    <button id="dark-mode-toggle">🌙</button>
+  </header>
+
+  <!-- Contenido principal -->
+  <main>
+    <section class="qr-generator">
+      <h1>Generador de Códigos QR</h1>
+      <p>Ingresa tu texto o URL para generar un código QR personalizable</p>
+      
+      <div class="qr-container">
+        <!-- Panel de controles -->
+        <div class="controls">
+          <div class="input-group">
+            <label for="qr-text">Texto o URL:</label>
+            <input type="text" id="qr-text" placeholder="https://ejemplo.com o texto" required>
+          </div>
+          
+          <div class="input-group">
+            <label for="qr-color">Color del código QR:</label>
+            <input type="color" id="qr-color" value="#000000">
+          </div>
+          
+          <div class="input-group">
+            <label for="qr-size">Tamaño (px):</label>
+            <div class="range-container">
+              <input type="range" id="qr-size" min="100" max="500" value="250">
+              <span id="size-value">250px</span>
+            </div>
+          </div>
+          
+          <!-- Opciones de Diseño -->
+          <div class="input-group">
+            <label for="qr-design">Diseño:</label>
+            <select id="qr-design">
+              <option value="default">Por defecto</option>
+              <option value="dots">Puntos</option>
+              <option value="rounded">Redondeado</option>
+            </select>
+          </div>
+          
+          <!-- Opciones de Fondo -->
+          <div class="input-group">
+            <label for="qr-background">Fondo:</label>
+            <select id="qr-background">
+              <option value="none">Sin fondo</option>
+              <option value="gradient1">Gradiente Azul</option>
+              <option value="gradient2">Gradiente Verde</option>
+              <option value="pattern1">Patrón 1</option>
+              <option value="pattern2">Patrón 2</option>
+            </select>
+          </div>
+          
+          <!-- Opciones de Cuadro -->
+          <div class="input-group">
+            <label for="qr-frame">Cuadro:</label>
+            <select id="qr-frame">
+              <option value="none">Sin cuadro</option>
+              <option value="simple">Simple</option>
+              <option value="double">Doble</option>
+              <option value="rounded">Redondeado</option>
+              <option value="ornate">Decorativo</option>
+            </select>
+          </div>
+          
+          <button id="generate-btn" class="generate-btn">Generar Código QR</button>
+        </div>
+        
+        <!-- Panel de visualización -->
+        <div class="preview">
+          <div id="qr-code" class="qr-code"></div>
+          <button id="download-btn" class="download-btn hidden">
+            <i class="fa-solid fa-download"></i> Descargar QR
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Pie de página -->
+  <footer>
+    <p>&copy; 2025 Alan Aquino. Generador de Códigos QR.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
