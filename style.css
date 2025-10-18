@@ -1,0 +1,387 @@
+/* Tipografía y scroll suave */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f8f9fa;
+  color: #333;
+  line-height: 1.6;
+  transition: background 0.3s, color 0.3s;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Encabezado */
+header {
+  background: #1565c0;
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header .logo {
+  font-size: 1.5em;
+  font-weight: 600;
+}
+
+#dark-mode-toggle {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.3em;
+  cursor: pointer;
+  margin-left: 15px;
+}
+
+/* Contenido principal */
+main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Sección del generador QR */
+.qr-generator {
+  width: 100%;
+  max-width: 1000px;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.qr-generator h1 {
+  margin-bottom: 10px;
+  color: #1565c0;
+  font-weight: 600;
+}
+
+.qr-generator p {
+  margin-bottom: 30px;
+  color: #555;
+  font-size: 1.1em;
+}
+
+/* Contenedor QR */
+.qr-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Controles */
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.input-group label {
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #333;
+}
+
+.input-group input,
+.input-group select {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-family: inherit;
+  transition: border 0.3s;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+  border-color: #1976d2;
+  outline: none;
+}
+
+.input-group input[type="color"] {
+  height: 50px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.input-group input[type="range"] {
+  padding: 0;
+}
+
+.range-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+#size-value {
+  font-weight: 600;
+  color: #1565c0;
+  min-width: 50px;
+}
+
+.generate-btn {
+  padding: 12px 20px;
+  background: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 1em;
+  margin-top: 10px;
+}
+
+.generate-btn:hover {
+  background: #1565c0;
+}
+
+/* Panel de vista previa */
+.preview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.qr-code {
+  width: 250px;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  background: white;
+}
+
+.qr-code canvas {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/* Estilos para fondos */
+.qr-code.gradient1 {
+  background: linear-gradient(135deg, #1565c0, #42a5f5);
+}
+
+.qr-code.gradient2 {
+  background: linear-gradient(135deg, #2e7d32, #66bb6a);
+}
+
+.qr-code.pattern1 {
+  background: 
+    radial-gradient(circle at 25% 25%, #1565c0 2%, transparent 2.5%),
+    radial-gradient(circle at 75% 75%, #1565c0 2%, transparent 2.5%);
+  background-size: 30px 30px;
+  background-color: #e3f2fd;
+}
+
+.qr-code.pattern2 {
+  background: 
+    linear-gradient(45deg, #f5f5f5 25%, transparent 25%),
+    linear-gradient(-45deg, #f5f5f5 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #f5f5f5 75%),
+    linear-gradient(-45deg, transparent 75%, #f5f5f5 75%);
+  background-size: 20px 20px;
+  background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+}
+
+/* Estilos para cuadros */
+.qr-frame {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.frame-simple {
+  border: 3px solid #333;
+}
+
+.frame-double {
+  border: 6px double #333;
+}
+
+.frame-rounded {
+  border: 3px solid #333;
+  border-radius: 20px;
+}
+
+.frame-ornate {
+  border: 2px solid #333;
+  box-shadow: 
+    0 0 0 6px #fff,
+    0 0 0 9px #333,
+    0 0 0 15px #fff,
+    0 0 0 18px #333;
+}
+
+.download-btn {
+  padding: 10px 20px;
+  background: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+  font-family: inherit;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.download-btn:hover {
+  background: #388E3C;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Pie de página */
+footer {
+  background: #1565c0;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 0.9em;
+}
+
+/*
+===========================
+|       MODO OSCURO       |
+===========================
+*/
+body.dark-mode {
+  background: #1e1e1e;
+  color: #eaeaea;
+}
+
+body.dark-mode header {
+  background: #0d47a1;
+}
+
+body.dark-mode .qr-generator h1 {
+  color: #bbdefb;
+}
+
+body.dark-mode .qr-generator p {
+  color: #bbdefb;
+}
+
+body.dark-mode .qr-container {
+  background: #2c2c2c;
+  color: #eaeaea;
+}
+
+body.dark-mode .input-group label {
+  color: #eaeaea;
+}
+
+body.dark-mode .input-group input,
+body.dark-mode .input-group select {
+  background: #2c2c2c;
+  color: #eaeaea;
+  border: 1px solid #555;
+}
+
+body.dark-mode .generate-btn {
+  background: #0d47a1;
+}
+
+body.dark-mode .generate-btn:hover {
+  background: #1565c0;
+}
+
+body.dark-mode .qr-code {
+  border-color: #555;
+  background: #2c2c2c;
+}
+
+body.dark-mode footer {
+  background: #0d47a1;
+}
+
+/*
+===========================
+|     RESPONSIVIDAD       |
+===========================
+*/
+@media (max-width: 992px) {
+  .qr-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .qr-generator {
+    padding: 20px 15px;
+  }
+  
+  .qr-container {
+    padding: 20px;
+  }
+  
+  header .logo {
+    font-size: 1.3em;
+  }
+}
+
+@media (max-width: 480px) {
+  header .logo {
+    font-size: 1.2em;
+  }
+  
+  .qr-generator h1 {
+    font-size: 1.5em;
+  }
+  
+  .qr-container {
+    padding: 15px;
+  }
+  
+  .qr-code {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .input-group {
+    gap: 5px;
+  }
+  
+  .input-group input,
+  .input-group select {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
