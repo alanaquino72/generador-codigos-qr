@@ -36,9 +36,7 @@ Además, incluye **modo oscuro**, descarga directa del QR en formato PNG y una i
 3. Ingresa un texto o URL, personaliza tu QR y haz clic en **“Generar Código QR”**.  
 4. Descarga tu QR en formato PNG si lo deseas.
 
----
-
-## Alternativa sin clonar el repositorio
+**Alternativa sin clonar el repositorio:**
 
 [Presiona aquí para visitar la página web](https://alanaquino72.github.io/generador-codigos-qr/).
 
