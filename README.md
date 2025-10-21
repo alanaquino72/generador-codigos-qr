@@ -38,6 +38,12 @@ Además, incluye **modo oscuro**, descarga directa del QR en formato PNG y una i
 
 ---
 
+## Alternativa sin clonar el repositorio
+
+[Presiona aquí para visitar la página web](https://alanaquino72.github.io/generador-codigos-qr/).
+
+---
+
 ## Estructura del proyecto
 
 ```
