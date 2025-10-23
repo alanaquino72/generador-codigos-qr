@@ -17,12 +17,12 @@ Además, incluye **modo oscuro**, descarga directa del QR en formato PNG y una i
 
 ## Tecnologías utilizadas
 
-- **HTML5** → Estructura del sitio web.  
-- **CSS3** → Estilos modernos, gradientes y modo oscuro.  
-- **JavaScript** → Lógica de generación, personalización y descarga.  
-- **QRCode.js** → Biblioteca para crear códigos QR dinámicamente.  
-- **Font Awesome** → Íconos para una interfaz más atractiva.  
-- **Google Fonts (Poppins)** → Tipografía moderna y legible.
+- **HTML5**: Estructura del sitio web.  
+- **CSS3**: Estilos modernos, gradientes y modo oscuro.  
+- **JavaScript**: Lógica de generación, personalización y descarga.  
+- **QRCode.js**: Biblioteca para crear códigos QR dinámicamente.  
+- **Font Awesome**: Íconos para una interfaz más atractiva.  
+- **Google Fonts (Poppins)**: Tipografía moderna y legible.
 
 ---
 
@@ -30,7 +30,7 @@ Además, incluye **modo oscuro**, descarga directa del QR en formato PNG y una i
 
 1. Clona este repositorio:
    ```bash
-   git clone https://github.com/alanaquino72/generador-codigos-qr.git
+   git clone https://github.com/alanaquino19/generador-codigos-qr.git
    ```
 2. Abre el archivo **`index.html`** en tu navegador.  
 3. Ingresa un texto o URL, personaliza tu QR y haz clic en **“Generar Código QR”**.  
@@ -38,7 +38,7 @@ Además, incluye **modo oscuro**, descarga directa del QR en formato PNG y una i
 
 **Alternativa sin clonar el repositorio:**
 
-[Presiona aquí para visitar la página web](https://alanaquino72.github.io/generador-codigos-qr/).
+[Presiona aquí para visitar la página web](https://alanaquino19.github.io/generador-codigos-qr/).
 
 ---
 
