@@ -56,8 +56,7 @@ generador-codigos-qr
 
 ## Autor
 
-**Alan Aquino.**  
-Estudiante de Ingeniería en Informática.  
+Alan Aquino.
 
 ---
 
